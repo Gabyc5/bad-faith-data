@@ -102,15 +102,16 @@ function Cover() {
             <span className="issue-card-cta">Read this issue &#8594;</span>
           </Link>
 
-          <div className="issue-card issue-card-02 issue-card-locked">
+          <Link to="/issue/02" className="issue-card issue-card-02">
             <span className="issue-number">02</span>
             <span className="issue-card-title">Disclosure Season</span>
             <span className="issue-card-desc">
-              UAP disclosure dates vs. defense contractor stock prices.
-              The conspiracy that they are not UFOs at all.
+              The PURSUE files dropped. Defense stocks are at record highs.
+              A Hellfire missile hit an orb and did nothing. The data does not
+              tell you if aliens are real. It tells you who gets paid either way.
             </span>
-            <span className="issue-card-cta issue-locked-label">Coming soon</span>
-          </div>
+            <span className="issue-card-cta">Read this issue &#8594;</span>
+          </Link>
         </motion.div>
 
         <motion.div

@@ -1,0 +1,228 @@
+/* Issue 02 theme override: declassified document palette */
+.issue-02-theme {
+  --bg-02: #E8E0D0;
+  --ink-02: #1A1F14;
+  --olive: #4A6741;
+  --olive-dim: rgba(74,103,65,0.12);
+  --manila: #D4C9A8;
+  --redact: #1A1F14;
+  --stamp-green: #2E4A2E;
+}
+
+.issue-02-theme .issue-header-number { color: var(--olive); opacity: 0.2; }
+.issue-02-theme .issue-headline { color: var(--ink-02); }
+
+.issue-02-theme .issue-lede p:first-child::first-letter {
+  color: var(--olive);
+}
+
+/* Timeline */
+.timeline-container {
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  min-height: 70px;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--olive);
+  border: 2px solid var(--bg-02);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.timeline-hearing .timeline-dot { background: #FF3B30; }
+.timeline-release .timeline-dot { background: #FF6D00; }
+.timeline-legislation .timeline-dot { background: var(--olive); }
+.timeline-report .timeline-dot { background: #8A8A82; }
+.timeline-sighting .timeline-dot { background: #1A237E; }
+
+.timeline-line {
+  width: 1px;
+  flex: 1;
+  background: rgba(74,103,65,0.25);
+}
+
+.timeline-content {
+  padding-bottom: 20px;
+  flex: 1;
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-02);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.timeline-type {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--olive);
+  background: var(--olive-dim);
+  padding: 1px 6px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.timeline-hearing .timeline-type { color: #FF3B30; background: rgba(255,59,48,0.08); }
+.timeline-release .timeline-type { color: #FF6D00; background: rgba(255,109,0,0.08); }
+.timeline-sighting .timeline-type { color: #1A237E; background: rgba(26,35,126,0.08); }
+
+.timeline-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.6;
+}
+
+/* Dark section - Issue 02 version */
+.section-dark-02 {
+  background: var(--ink-02);
+  color: var(--bg-02);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding: 3rem 2rem;
+}
+
+.section-dark-02 .section-head { color: var(--bg-02); }
+.section-dark-02 .section-intro { color: #A89E96; }
+.section-dark-02 .section-body { color: #D4CBC3; }
+
+.chart-wrapper-dark {
+  border-color: rgba(168,158,150,0.2);
+  background: rgba(255,255,255,0.03);
+}
+
+.chart-wrapper-dark .chart-label-title { color: #D4CBC3; }
+.chart-wrapper-dark .chart-label-source { color: #8A8A82; }
+
+/* Credibility matrix */
+.matrix-table-wrapper {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid var(--ink-light);
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.matrix-table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  border-bottom: 2px solid var(--ink);
+  background: var(--bg-alt);
+}
+
+.matrix-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.matrix-name {
+  font-weight: 500;
+  color: var(--ink);
+  min-width: 140px;
+}
+
+.matrix-cell {
+  text-align: center;
+}
+
+.matrix-yes {
+  font-weight: 700;
+  color: var(--olive);
+}
+
+.matrix-no {
+  color: var(--ink-light);
+}
+
+.matrix-notes {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.matrix-note-item {
+  display: flex;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.06);
+}
+
+.matrix-note-name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-mid);
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.matrix-note-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+/* Callout - Issue 02 version */
+.callout-box-02 {
+  border-color: var(--olive);
+}
+
+.callout-box-02 .callout-label {
+  color: var(--olive);
+}
+
+/* Pullquote - Issue 02 version */
+.pullquote-02 {
+  border-left-color: var(--olive);
+}
+
+@media (max-width: 600px) {
+  .section-dark-02 {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding: 2rem 1.25rem;
+  }
+  .matrix-note-item {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .matrix-note-name {
+    min-width: auto;
+  }
+  .issue-header-bg {
+    left: -1.25rem;
+    right: -1.25rem;
+  }
+}
