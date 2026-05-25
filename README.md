@@ -2,7 +2,7 @@
 
 A data journalism project disguised as a conspiracy zine. Each issue investigates the gap between institutional data signals and what publicly available proxy data actually shows.
 
-Built with React, D3, and a healthy distrust of official metrics.
+Built with React and D3.
 
 ## Issues
 

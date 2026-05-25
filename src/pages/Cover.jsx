@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import GeometricDistortion from '../components/GeometricDistortion'
+import GlitchText from '../components/GlitchText'
 import './Cover.css'
 
 function Cover() {
   return (
     <div className="cover">
-      <div className="cover-grain" />
+      <GeometricDistortion density={16} speed={0.0002} />
 
       <motion.div
         className="cover-content"
@@ -27,47 +29,75 @@ function Cover() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          BAD<br/>
-          FAITH<br/>
-          DATA
+          BAD<br/>FAITH<br/>DATA
         </motion.h1>
 
-        <motion.p
-          className="cover-subtitle"
+        <motion.div
+          className="cover-tagline-row"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.5 }}
         >
-          What the numbers say when you stop<br/>
-          asking them politely.
-        </motion.p>
+          <div className="cover-tagline-line" />
+          <p className="cover-tagline">
+            What the numbers say when you stop asking them politely.
+          </p>
+        </motion.div>
 
         <motion.div
           className="cover-blurb"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.9 }}
+          transition={{ delay: 0.8 }}
         >
           <p className="cover-blurb-text">
-            Every month, the government publishes consumer spending data
-            that says the economy is fine. Every month, people are doing
-            math in the grocery aisle. This zine is about the second
-            number.
+            Gas hit $4.50 a gallon. Grocery inflation is climbing again.
+            The government says consumer confidence is holding steady.
+            People are doing math in the grocery aisle. This zine is about
+            the second number.
           </p>
+        </motion.div>
+
+        <motion.div
+          className="cover-stat-ticker"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.0 }}
+        >
+          <div className="ticker-item">
+            <span className="ticker-value">$4.55</span>
+            <span className="ticker-label">avg gas / gal</span>
+          </div>
+          <div className="ticker-divider" />
+          <div className="ticker-item">
+            <span className="ticker-value">+43.6%</span>
+            <span className="ticker-label">gas YoY</span>
+          </div>
+          <div className="ticker-divider" />
+          <div className="ticker-item">
+            <span className="ticker-value">+9.4%</span>
+            <span className="ticker-label">beef forecast</span>
+          </div>
+          <div className="ticker-divider" />
+          <div className="ticker-item">
+            <span className="ticker-value">24,000</span>
+            <span className="ticker-label">USDA jobs cut</span>
+          </div>
         </motion.div>
 
         <motion.div
           className="cover-issues"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1 }}
+          transition={{ delay: 1.2 }}
         >
           <Link to="/issue/01" className="issue-card issue-card-01">
             <span className="issue-number">01</span>
             <span className="issue-card-title">The Cart You Left Behind</span>
             <span className="issue-card-desc">
-              Grocery stores as manipulation machines.
-              What happens to the tricks when the economy breaks.
+              The Iran war closed the Strait of Hormuz. Gas prices doubled.
+              Fertilizer costs spiked. The grocery store manipulation machine
+              is breaking down. Here is the data the spending reports leave out.
             </span>
             <span className="issue-card-cta">Read this issue &#8594;</span>
           </Link>
@@ -87,7 +117,7 @@ function Cover() {
           className="cover-footer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
+          transition={{ delay: 1.5 }}
         >
           <span className="cover-credit">
             built by <a href="https://gabyhernandez.dev" target="_blank" rel="noopener">gaby hernandez</a>
@@ -99,7 +129,7 @@ function Cover() {
       </motion.div>
 
       <div className="cover-edge-stamp">
-        <span>UNVERIFIED</span>
+        <GlitchText text="UNVERIFIED" duration={1200} />
       </div>
     </div>
   )
