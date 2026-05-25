@@ -1,0 +1,217 @@
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 300px; height: 300px;
+  background: var(--orange-sale);
+  opacity: 0.06;
+  border-radius: 0 0 0 100%;
+  pointer-events: none;
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 200px; height: 200px;
+  background: var(--green-receipt);
+  opacity: 0.05;
+  border-radius: 0 100% 0 0;
+  pointer-events: none;
+}
+
+.cover-content {
+  max-width: 720px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.cover-masthead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--ink);
+}
+
+.cover-issue-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--ink-mid);
+}
+
+.cover-dot {
+  font-size: 5px;
+  color: var(--ink-light);
+}
+
+.cover-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 14vw, 9rem);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.cover-subtitle {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink-mid);
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+  max-width: 400px;
+}
+
+.cover-blurb {
+  border-left: 4px solid var(--red-hot);
+  padding-left: 16px;
+  margin-bottom: 3rem;
+  max-width: 480px;
+}
+
+.cover-blurb-text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.7;
+}
+
+.cover-issues {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 3rem;
+}
+
+.issue-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 1.5rem;
+  border: 2px solid var(--ink);
+  background: var(--bg);
+  transition: transform 0.2s, background 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.issue-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.issue-card-locked {
+  opacity: 0.45;
+  cursor: default;
+  border-style: dashed;
+}
+
+.issue-card-locked:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.issue-number {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.issue-card-01 .issue-number { color: var(--orange-sale); }
+.issue-card-02 .issue-number { color: var(--blue-redact); }
+
+.issue-card-title {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.issue-card-desc {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-mid);
+  line-height: 1.5;
+}
+
+.issue-card-cta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--red-hot);
+  margin-top: 4px;
+}
+
+.issue-locked-label {
+  color: var(--ink-light) !important;
+}
+
+.cover-footer {
+  display: flex;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink-light);
+}
+
+.cover-credit {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-light);
+}
+
+.cover-credit a {
+  color: var(--ink-mid);
+  border-bottom: 1px solid var(--ink-light);
+  transition: color 0.2s;
+}
+
+.cover-credit a:hover {
+  color: var(--red-hot);
+}
+
+.cover-edge-stamp {
+  position: fixed;
+  top: 50%;
+  right: -35px;
+  transform: rotate(90deg);
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  color: var(--red-hot);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .cover-issues {
+    grid-template-columns: 1fr;
+  }
+  .cover-title {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+  .cover-masthead {
+    flex-wrap: wrap;
+  }
+}
